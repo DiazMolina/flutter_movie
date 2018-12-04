@@ -1,6 +1,7 @@
 # movies_prime
 
-A new Flutter project.
+![Screenshot](videoprime.gif)
+
 
 ## Getting Started
 
