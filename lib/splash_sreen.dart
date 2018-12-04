@@ -16,7 +16,7 @@ class splash_screenState extends State<splash_screen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(milliseconds: 7200), () => Navegador.GotoHome(context));
+    Timer(Duration(milliseconds: 7400), () => Navegador.GotoHome(context));
   }
 
   @override

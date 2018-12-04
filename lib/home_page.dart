@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Colors.grey[900],
+          backgroundColor: Colors.grey[900],
           drawer: Drawer(),
           appBar: AppBar(
             backgroundColor: Colors.black,
@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
                         fontWeight: FontWeight.bold,
                         fontSize: 24.0),
                   ),
-                  SizedBox(width: 180.0),
+                  SizedBox(width: 50.0),
                   IconButton(icon: Icon(Icons.search), onPressed: () {}),
                 ],
               )
@@ -64,7 +64,6 @@ class _HomeState extends State<Home> {
                 Stack(
                   children: <Widget>[
                     Container(
-
                       height: screenHeight / 3,
                       width: MediaQuery.of(context).size.width,
                       child: new Carousel(
@@ -88,20 +87,18 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 10.0),
                 Column(
-
                   children: <Widget>[
                     Padding(
-
                       padding: EdgeInsets.only(left: 10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           Padding(
-                            padding:EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 10.0),
+                            padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 10.0),
                             child: Text(
                               "TV y Peliculas",
-
-                              style: TextStyle(fontSize: 20.0,color: Colors.white),
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.white),
                             ),
                           )
                         ],
@@ -137,61 +134,55 @@ class _HomeState extends State<Home> {
             SizedBox(height: 10.0),
             Column(
               children: <Widget>[
-
-                   Container(
-
-                      height: 230.0,
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Padding(
-
-                                padding:
-                                    EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
-                                child: Text(
-                                  'Top Peliculas',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20.0),
-                                ),
+                Container(
+                    height: 230.0,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
+                              child: Text(
+                                'Top Peliculas',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20.0),
                               ),
-                              InkWell(
-                                child: Text(
-                                  'mas',
-                                  style: TextStyle(
-                                      color: Colors.blue, fontSize: 18.0),
-                                ),
-                                onTap: () {
+                            ),
+                            InkWell(
+                              child: Text(
+                                'mas',
+                                style: TextStyle(
+                                    color: Colors.blue, fontSize: 18.0),
+                              ),
+                              onTap: () {},
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Container(
+                              height: 180.0,
+                              child: ListView.builder(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemCount: photos.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Container(
+                                    width: 140.0,
+                                    child: Card(
+                                      child: Image.asset(photos[index],
+                                          fit: BoxFit.fill),
+                                    ),
+                                  );
                                 },
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                height: 180.0,
-                                child: ListView.builder(
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: photos.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Container(
-                                      width: 140.0,
-                                      child: Card(
-                                        child: Image.asset(photos[index],
-                                            fit: BoxFit.fill),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    )),
               ],
             ),
           ])),
